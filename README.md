@@ -34,28 +34,6 @@ No login. No subscription. No data stored. Ever.
 
 ---
 
-## 🚀 Getting Started
-
-### Option 1 — Use it locally
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/your-username/readcraft.git
-
-# 2. Open the file in your browser
-open index.html
-```
-
-No installs. No build step. Just open and go.
-
-### Option 2 — Deploy it live (Netlify)
-
-1. Go to [netlify.com](https://netlify.com) and sign up free
-2. Drag the project folder into the Netlify dashboard
-3. Your app is live at `https://your-site.netlify.app`
-
----
-
 ## 🔑 Getting an API Key
 
 You need an API key from one of these providers:
