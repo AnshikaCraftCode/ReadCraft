@@ -27,7 +27,7 @@ No login. No subscription. No data stored. Ever.
 - 💾 **Download as .md** — Save directly to your machine
 - 🔒 **Privacy first** — Your API key never leaves your browser
 - 📱 **Mobile friendly** — Works on any device, any browser
-
+- 
 
 ## 🚀 Getting Started
 
@@ -81,6 +81,5 @@ You need an API key from one of these providers:
 Zero dependencies. Zero frameworks. Zero build tools.
 One file. That's the whole app.
 
----
 
 ## 📁 Project Structure
