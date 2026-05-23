@@ -8,6 +8,8 @@
 ![No Framework](https://img.shields.io/badge/framework-none-6ee7b7?style=flat-square)
 ![Free](https://img.shields.io/badge/free-to%20use-6ee7b7?style=flat-square)
 
+---
+
 ## What is Readcraft?
 
 Readcraft is a free, browser-based AI README generator for developers.
@@ -15,6 +17,8 @@ Readcraft is a free, browser-based AI README generator for developers.
 You describe your project, pick your sections, choose your AI provider — and get a clean, professional `README.md` ready to drop straight into your GitHub repo.
 
 No login. No subscription. No data stored. Ever.
+
+---
 
 ## ✨ Features
 
@@ -27,7 +31,8 @@ No login. No subscription. No data stored. Ever.
 - 💾 **Download as .md** — Save directly to your machine
 - 🔒 **Privacy first** — Your API key never leaves your browser
 - 📱 **Mobile friendly** — Works on any device, any browser
-- 
+
+---
 
 ## 🚀 Getting Started
 
@@ -39,13 +44,17 @@ git clone https://github.com/your-username/readcraft.git
 
 # 2. Open the file in your browser
 open index.html
-```No installs. No build step. Just open and go.
+```
+
+No installs. No build step. Just open and go.
 
 ### Option 2 — Deploy it live (Netlify)
 
 1. Go to [netlify.com](https://netlify.com) and sign up free
 2. Drag the project folder into the Netlify dashboard
 3. Your app is live at `https://your-site.netlify.app`
+
+---
 
 ## 🔑 Getting an API Key
 
@@ -60,6 +69,8 @@ You need an API key from one of these providers:
 
 > **Tip:** OpenRouter is the easiest option — one key gives you access to all models including Claude, GPT-4o, Gemini, Llama, Mistral and more.
 
+---
+
 ## 📖 How to Use
 
 1. **Open the app** in your browser
@@ -69,6 +80,8 @@ You need an API key from one of these providers:
 5. **Choose your sections** using the checkboxes
 6. **Hit Generate README →** and watch it stream in live
 7. **Copy or Download** your README and paste it into GitHub
+
+---
 
 ## 🛠 Tech Stack
 
@@ -80,6 +93,3 @@ You need an API key from one of these providers:
 
 Zero dependencies. Zero frameworks. Zero build tools.
 One file. That's the whole app.
-
-
-## 📁 Project Structure
