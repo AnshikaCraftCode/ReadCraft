@@ -9,22 +9,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:       #0c0c0e;
-  --s1:       #131315;
-  --s2:       #18181c;
-  --s3:       #202026;
-  --border:   #27272f;
-  --border2:  #35353f;
-  --text:     #e6e6f0;
-  --muted:    #64647a;
-  --dim:      #44445a;
-  --accent:   #6ee7b7;
-  --accent2:  #059669;
-  --blue:     #60a5fa;
-  --purple:   #a78bfa;
-  --orange:   #fb923c;
-  --mono:     'JetBrains Mono', monospace;
-  --display:  'Syne', sans-serif;
+  --bg:      #0c0c0e;
+  --s1:      #131315;
+  --s2:      #18181c;
+  --s3:      #202026;
+  --border:  #27272f;
+  --border2: #35353f;
+  --text:    #e6e6f0;
+  --muted:   #64647a;
+  --dim:     #44445a;
+  --accent:  #6ee7b7;
+  --accent2: #059669;
+  --blue:    #60a5fa;
+  --purple:  #a78bfa;
+  --mono:    'JetBrains Mono', monospace;
+  --display: 'Syne', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -37,32 +36,25 @@ body {
   font-size: 13px;
 }
 
-/* dot grid */
 body::before {
   content: '';
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   background-image: radial-gradient(circle, rgba(110,231,183,0.06) 1px, transparent 1px);
   background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 0;
+  pointer-events: none; z-index: 0;
 }
 
-/* glow blob */
 body::after {
   content: '';
   position: fixed;
-  top: -200px;
-  left: 50%;
+  top: -200px; left: 50%;
   transform: translateX(-50%);
-  width: 700px;
-  height: 400px;
+  width: 700px; height: 400px;
   background: radial-gradient(ellipse, rgba(110,231,183,0.04) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+  pointer-events: none; z-index: 0;
 }
 
-/* ── HEADER ── */
+/* HEADER */
 header {
   position: sticky; top: 0; z-index: 200;
   background: rgba(12,12,14,0.9);
@@ -85,33 +77,25 @@ header {
   border-radius: 6px;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--display);
-  font-weight: 900;
-  font-size: 0.85rem;
-  color: #0c0c0e;
-  flex-shrink: 0;
+  font-weight: 900; font-size: 0.85rem;
+  color: #0c0c0e; flex-shrink: 0;
 }
 
 .logo-text {
   font-family: var(--display);
-  font-weight: 800;
-  font-size: 1rem;
+  font-weight: 800; font-size: 1rem;
   letter-spacing: -0.03em;
 }
-
 .logo-text span { color: var(--accent); }
 
-.header-pills {
-  display: flex; align-items: center; gap: 0.5rem;
-}
+.header-pills { display: flex; align-items: center; gap: 0.5rem; }
 
 .pill {
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem; letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid var(--border2);
   color: var(--muted);
-  padding: 3px 9px;
-  border-radius: 20px;
+  padding: 3px 9px; border-radius: 20px;
 }
 
 .pill.live {
@@ -124,14 +108,13 @@ header {
 .pill.live::before {
   content: '';
   width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
+  border-radius: 50%; background: var(--accent);
   animation: blink-dot 2s ease-in-out infinite;
 }
 
 @keyframes blink-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   position: relative; z-index: 1;
   max-width: 960px; margin: 0 auto;
@@ -142,8 +125,7 @@ header {
   font-family: var(--display);
   font-weight: 900;
   font-size: clamp(2.2rem, 5.5vw, 4rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  line-height: 0.98; letter-spacing: -0.045em;
   margin-bottom: 1.1rem;
 }
 
@@ -155,69 +137,31 @@ header {
 }
 
 .hero-sub {
-  font-size: 0.78rem;
-  line-height: 1.9;
-  color: var(--muted);
-  max-width: 460px;
-  margin-bottom: 0;
+  font-size: 0.78rem; line-height: 1.9;
+  color: var(--muted); max-width: 460px;
 }
 
-/* ── PROVIDER TABS ── */
-.provider-section {
+/* FREE BADGE */
+.free-bar {
   position: relative; z-index: 1;
-  max-width: 960px; margin: 2rem auto 0;
+  max-width: 960px; margin: 1.5rem auto 0;
   padding: 0 2rem;
 }
 
-.provider-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.7rem;
-}
-
-.provider-tabs {
-  display: flex; gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.provider-tab {
-  display: flex; align-items: center; gap: 7px;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--s1);
-  cursor: pointer;
-  transition: all 0.15s;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
-  user-select: none;
-}
-
-.provider-tab:hover { border-color: var(--border2); color: var(--text); }
-
-.provider-tab.active {
-  border-color: var(--accent);
+.free-notice {
+  display: inline-flex; align-items: center; gap: 8px;
   background: rgba(110,231,183,0.07);
-  color: var(--text);
-}
-
-.provider-icon {
-  width: 18px; height: 18px;
-  border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(110,231,183,0.2);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
   font-size: 0.7rem;
-  flex-shrink: 0;
+  color: var(--accent);
 }
 
-.pi-anthropic { background: #cc785c22; color: #cc785c; }
-.pi-openai    { background: #10a37f22; color: #10a37f; }
-.pi-google    { background: #4285f422; color: #4285f4; }
-.pi-openrouter{ background: #a78bfa22; color: #a78bfa; }
+.free-notice strong { font-weight: 600; }
+.free-notice span { color: var(--muted); }
 
-/* ── APP GRID ── */
+/* APP GRID */
 .app-wrap {
   position: relative; z-index: 1;
   max-width: 960px; margin: 1.5rem auto 0;
@@ -227,12 +171,11 @@ header {
   gap: 1.2rem;
 }
 
-/* ── CARD ── */
+/* CARD */
 .card {
   background: var(--s1);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
+  border-radius: 12px; overflow: hidden;
 }
 
 .card-head {
@@ -245,70 +188,23 @@ header {
 .card-head-icon { font-size: 0.8rem; }
 
 .card-head-title {
-  font-size: 0.58rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: 0.58rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted);
 }
 
 .card-body { padding: 1.2rem; }
 
-/* ── API KEY AREA ── */
-.api-block {
-  background: var(--s2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1.1rem;
-}
-
-.api-block-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-
-.api-block-title {
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.api-link {
-  font-size: 0.62rem;
-  color: var(--accent);
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.12s;
-}
-.api-link:hover { opacity: 1; }
-
-.api-row { display: flex; gap: 0.4rem; }
-.api-row input { flex: 1; }
-
-.model-select-wrap {
-  margin-top: 0.6rem;
-  display: none;
-}
-
-.model-select-wrap.visible { display: block; }
-
-/* ── FORM ── */
+/* FORM */
 .field { margin-bottom: 1rem; }
 
 label {
   display: block;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: 0.6rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
   margin-bottom: 0.35rem;
 }
 
-input[type="text"],
-input[type="password"],
-textarea,
-select {
+input[type="text"], textarea, select {
   width: 100%;
   background: var(--s2);
   border: 1px solid var(--border);
@@ -316,8 +212,7 @@ select {
   font-family: var(--mono);
   font-size: 0.76rem;
   padding: 0.58rem 0.8rem;
-  border-radius: 6px;
-  outline: none;
+  border-radius: 6px; outline: none;
   transition: border-color 0.15s, box-shadow 0.15s;
   appearance: none;
 }
@@ -328,7 +223,6 @@ input:focus, textarea:focus, select:focus {
 }
 
 input::placeholder, textarea::placeholder { color: var(--dim); }
-
 textarea { resize: vertical; min-height: 76px; line-height: 1.7; }
 
 select {
@@ -341,38 +235,15 @@ select {
 
 select option { background: var(--s2); }
 
-.icon-btn {
-  background: var(--s3);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  padding: 0 0.7rem;
-  border-radius: 6px;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: color 0.12s, border-color 0.12s;
-}
-
-.icon-btn:hover { color: var(--text); border-color: var(--border2); }
-
 hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 
-/* ── CHECKBOXES ── */
-.check-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.4rem;
-}
+/* CHECKBOXES */
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; }
 
 .check-item {
   display: flex; align-items: center; gap: 0.45rem;
-  font-size: 0.7rem;
-  color: var(--muted);
-  cursor: pointer;
-  transition: color 0.12s;
-  padding: 3px 0;
+  font-size: 0.7rem; color: var(--muted);
+  cursor: pointer; transition: color 0.12s; padding: 3px 0;
 }
 
 .check-item:hover { color: var(--text); }
@@ -380,34 +251,23 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 .check-item input[type="checkbox"] {
   width: 13px; height: 13px;
   accent-color: var(--accent);
-  cursor: pointer;
-  flex-shrink: 0;
+  cursor: pointer; flex-shrink: 0;
 }
 
-/* ── GENERATE BUTTON ── */
+/* GENERATE BUTTON */
 #generateBtn {
-  width: 100%;
-  margin-top: 0.9rem;
-  padding: 0.85rem;
+  width: 100%; margin-top: 0.9rem; padding: 0.85rem;
   background: var(--accent);
-  border: none;
-  border-radius: 8px;
+  border: none; border-radius: 8px;
   color: #0c0c0e;
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
+  font-family: var(--display); font-weight: 800;
+  font-size: 0.8rem; letter-spacing: 0.02em;
   cursor: pointer;
   transition: opacity 0.15s, transform 0.1s, box-shadow 0.2s;
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
 }
 
-#generateBtn:hover {
-  opacity: 0.88;
-  box-shadow: 0 0 28px rgba(110,231,183,0.3);
-}
-
+#generateBtn:hover { opacity: 0.88; box-shadow: 0 0 28px rgba(110,231,183,0.3); }
 #generateBtn:active { transform: scale(0.98); }
 #generateBtn:disabled { opacity: 0.3; cursor: not-allowed; box-shadow: none; }
 
@@ -426,13 +286,11 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 
 .progress-bar {
   position: absolute; bottom: 0; left: 0;
-  height: 2px;
-  background: rgba(0,0,0,0.3);
-  width: 0%;
-  transition: width 0.35s ease;
+  height: 2px; background: rgba(0,0,0,0.3);
+  width: 0%; transition: width 0.35s ease;
 }
 
-/* ── OUTPUT ── */
+/* OUTPUT */
 .output-card { display: flex; flex-direction: column; }
 
 .output-toolbar {
@@ -447,13 +305,10 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
   border: 1px solid var(--border);
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem; letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.12s;
+  padding: 4px 10px; border-radius: 4px;
+  cursor: pointer; transition: all 0.12s;
 }
 
 .tool-btn:hover { border-color: var(--border2); color: var(--text); }
@@ -466,10 +321,8 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 .tool-btn-r { margin-left: auto; }
 
 .output-body {
-  flex: 1;
-  padding: 1.2rem;
-  min-height: 500px;
-  max-height: 640px;
+  flex: 1; padding: 1.2rem;
+  min-height: 500px; max-height: 640px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
@@ -478,7 +331,7 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 .output-body::-webkit-scrollbar { width: 3px; }
 .output-body::-webkit-scrollbar-thumb { background: var(--border); }
 
-/* ── PLACEHOLDER ── */
+/* PLACEHOLDER */
 .placeholder {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
@@ -488,8 +341,7 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 
 .ph-icon {
   width: 48px; height: 48px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: 1px solid var(--border); border-radius: 10px;
   background: var(--s2);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem;
@@ -497,17 +349,15 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 
 .placeholder p { font-size: 0.7rem; line-height: 1.8; max-width: 220px; }
 
-/* ── RAW OUTPUT ── */
+/* RAW OUTPUT */
 #rawOutput {
   font-family: var(--mono);
-  font-size: 0.71rem;
-  line-height: 1.95;
+  font-size: 0.71rem; line-height: 1.95;
   color: #b8c0cc;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: pre-wrap; word-break: break-word;
 }
 
-/* ── PREVIEW ── */
+/* PREVIEW */
 #previewOutput { display: none; font-size: 0.78rem; line-height: 1.8; color: var(--text); }
 #previewOutput h1 { font-family: var(--display); font-size: 1.6rem; font-weight: 900; margin-bottom: 0.5rem; color: var(--text); }
 #previewOutput h2 { font-size: 0.8rem; font-weight: 600; color: var(--accent); margin: 1.4rem 0 0.5rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
@@ -531,45 +381,45 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 0.9rem 0; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 .cursor::after { content:'▌'; animation: blink 0.8s step-end infinite; color: var(--accent); }
 
-/* ── TOAST ── */
+/* TOAST */
 #toast {
   position: fixed; bottom: 2rem; left: 50%;
   transform: translateX(-50%) translateY(80px);
-  background: var(--s3);
-  border: 1px solid var(--border2);
-  color: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
+  background: var(--s3); border: 1px solid var(--border2);
+  color: var(--accent); font-family: var(--mono);
+  font-size: 0.68rem; letter-spacing: 0.08em;
+  padding: 0.5rem 1.2rem; border-radius: 6px;
   transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-  z-index: 9000;
-  pointer-events: none;
+  z-index: 9000; pointer-events: none;
 }
 #toast.show { transform: translateX(-50%) translateY(0); }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
   position: relative; z-index: 1;
   border-top: 1px solid var(--border);
   padding: 0.9rem 2rem;
   display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--dim);
+  font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--dim);
 }
 
 footer span { display: flex; align-items: center; gap: 6px; }
 footer .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
-/* ── RESPONSIVE ── */
+/* ERROR BOX */
+.error-box {
+  background: rgba(239,68,68,0.07);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 8px; padding: 1rem;
+  color: #fca5a5; font-size: 0.72rem; line-height: 1.7;
+  margin-top: 1rem; display: none;
+}
+
 @media (max-width: 740px) {
   .app-wrap { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2.2rem; }
   .check-grid { grid-template-columns: 1fr; }
-  .provider-tabs { gap: 0.4rem; }
 }
 </style>
 </head>
@@ -581,65 +431,33 @@ footer .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--acc
     <span class="logo-text">Read<span>craft</span></span>
   </a>
   <div class="header-pills">
-    <span class="pill">Free to use</span>
+    <span class="pill">100% Free</span>
     <span class="pill live">Online</span>
   </div>
 </header>
 
 <div class="hero">
   <h1>Craft a <span class="g">README</span><br/>developers respect.</h1>
-  <p class="hero-sub">Fill in your project details, pick your AI provider, choose sections — and get a polished, production-ready README.md in seconds.</p>
+  <p class="hero-sub">Fill in your project details, choose your sections, and get a polished production-ready README.md in seconds. No sign up. No API key. Completely free.</p>
 </div>
 
-<!-- PROVIDER SELECTOR -->
-<div class="provider-section">
-  <p class="provider-label">Choose your AI provider</p>
-  <div class="provider-tabs">
-    <div class="provider-tab active" onclick="setProvider('anthropic')" id="tab-anthropic">
-      <div class="provider-icon pi-anthropic">◆</div>
-      Anthropic Claude
-    </div>
-    <div class="provider-tab" onclick="setProvider('openai')" id="tab-openai">
-      <div class="provider-icon pi-openai">⬡</div>
-      OpenAI GPT
-    </div>
-    <div class="provider-tab" onclick="setProvider('google')" id="tab-google">
-      <div class="provider-icon pi-google">✦</div>
-      Google Gemini
-    </div>
-    <div class="provider-tab" onclick="setProvider('openrouter')" id="tab-openrouter">
-      <div class="provider-icon pi-openrouter">∞</div>
-      OpenRouter
-    </div>
+<div class="free-bar">
+  <div class="free-notice">
+    ✅ <strong>No API key needed.</strong>
+    <span>Just fill in your project details and generate — completely free.</span>
   </div>
 </div>
 
 <div class="app-wrap">
 
-  <!-- LEFT -->
+  <!-- LEFT: FORM -->
   <div class="card">
     <div class="card-head">
       <span class="card-head-icon">⚙</span>
-      <span class="card-head-title">Configuration</span>
+      <span class="card-head-title">Project Details</span>
     </div>
     <div class="card-body">
 
-      <!-- API KEY BLOCK -->
-      <div class="api-block">
-        <div class="api-block-header">
-          <span class="api-block-title" id="apiBlockTitle">Anthropic API Key</span>
-          <a class="api-link" id="apiLink" href="https://console.anthropic.com" target="_blank">Get key →</a>
-        </div>
-        <div class="api-row">
-          <input type="password" id="apiKey" placeholder="sk-ant-api03-..." autocomplete="off" />
-          <button class="icon-btn" onclick="toggleApiKey()">Show</button>
-        </div>
-        <div class="model-select-wrap" id="modelSelectWrap">
-          <select id="modelSelect" style="margin-top:0.5rem"></select>
-        </div>
-      </div>
-
-      <!-- FIELDS -->
       <div class="field">
         <label>Project Name *</label>
         <input type="text" id="projName" placeholder="my-awesome-project" />
@@ -703,10 +521,12 @@ footer .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--acc
         <div class="progress-bar" id="progressBar"></div>
       </button>
 
+      <div class="error-box" id="errorBox"></div>
+
     </div>
   </div>
 
-  <!-- RIGHT -->
+  <!-- RIGHT: OUTPUT -->
   <div class="card output-card">
     <div class="output-toolbar">
       <button class="tool-btn active" id="rawBtn" onclick="switchView('raw')">Markdown</button>
@@ -717,7 +537,7 @@ footer .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--acc
     <div class="output-body" id="outputBody">
       <div class="placeholder" id="placeholder">
         <div class="ph-icon">📄</div>
-        <p>Your README will stream in here.<br/>Fill in the details and hit Generate.</p>
+        <p>Your README will appear here.<br/>Fill in your details and hit Generate.</p>
       </div>
       <pre id="rawOutput" style="display:none"></pre>
       <div id="previewOutput"></div>
@@ -728,99 +548,13 @@ footer .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--acc
 
 <footer>
   <span><div class="dot"></div> Readcraft — README Generator</span>
-  <span>Bring your own API key · No data stored</span>
+  <span>Free · No sign up · No data stored</span>
 </footer>
 
 <div id="toast">✓ Done</div>
 
 <script>
-// ── PROVIDER CONFIG ──
-const PROVIDERS = {
-  anthropic: {
-    label: 'Anthropic API Key',
-    placeholder: 'sk-ant-api03-...',
-    link: 'https://console.anthropic.com',
-    linkText: 'Get key →',
-    models: [],
-    hasModelSelect: false,
-  },
-  openai: {
-    label: 'OpenAI API Key',
-    placeholder: 'sk-...',
-    link: 'https://platform.openai.com/api-keys',
-    linkText: 'Get key →',
-    models: [
-      { value: 'gpt-4o', label: 'GPT-4o (recommended)' },
-      { value: 'gpt-4o-mini', label: 'GPT-4o Mini (faster)' },
-      { value: 'gpt-4-turbo', label: 'GPT-4 Turbo' },
-      { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo (cheapest)' },
-    ],
-    hasModelSelect: true,
-  },
-  google: {
-    label: 'Google AI API Key',
-    placeholder: 'AIzaSy...',
-    link: 'https://aistudio.google.com/app/apikey',
-    linkText: 'Get key →',
-    models: [
-      { value: 'gemini-1.5-pro', label: 'Gemini 1.5 Pro (recommended)' },
-      { value: 'gemini-1.5-flash', label: 'Gemini 1.5 Flash (faster)' },
-      { value: 'gemini-pro', label: 'Gemini Pro' },
-    ],
-    hasModelSelect: true,
-  },
-  openrouter: {
-    label: 'OpenRouter API Key',
-    placeholder: 'sk-or-...',
-    link: 'https://openrouter.ai/keys',
-    linkText: 'Get free key →',
-    models: [
-      { value: 'anthropic/claude-sonnet-4-5', label: 'Claude Sonnet 4.5' },
-      { value: 'openai/gpt-4o', label: 'GPT-4o' },
-      { value: 'google/gemini-flash-1.5', label: 'Gemini Flash 1.5' },
-      { value: 'meta-llama/llama-3.3-70b-instruct', label: 'Llama 3.3 70B' },
-      { value: 'mistralai/mistral-large', label: 'Mistral Large' },
-      { value: 'deepseek/deepseek-chat', label: 'DeepSeek Chat' },
-    ],
-    hasModelSelect: true,
-  },
-};
-
-let currentProvider = 'anthropic';
 let generatedMarkdown = '';
-
-function setProvider(p) {
-  currentProvider = p;
-  document.querySelectorAll('.provider-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('tab-' + p).classList.add('active');
-
-  const cfg = PROVIDERS[p];
-  document.getElementById('apiBlockTitle').textContent = cfg.label;
-  document.getElementById('apiKey').placeholder = cfg.placeholder;
-  document.getElementById('apiLink').href = cfg.link;
-  document.getElementById('apiLink').textContent = cfg.linkText;
-  document.getElementById('apiKey').value = '';
-  document.getElementById('apiKey').type = 'password';
-
-  const modelWrap = document.getElementById('modelSelectWrap');
-  const modelSel  = document.getElementById('modelSelect');
-  if (cfg.hasModelSelect) {
-    modelWrap.classList.add('visible');
-    modelSel.innerHTML = cfg.models.map(m =>
-      `<option value="${m.value}">${m.label}</option>`
-    ).join('');
-  } else {
-    modelWrap.classList.remove('visible');
-    modelSel.innerHTML = '';
-  }
-}
-
-function toggleApiKey() {
-  const inp = document.getElementById('apiKey');
-  const btn = event.target;
-  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = 'Hide'; }
-  else { inp.type = 'password'; btn.textContent = 'Show'; }
-}
 
 function getSections() {
   return Array.from(document.querySelectorAll('input[name="sec"]:checked')).map(c => c.value);
@@ -837,223 +571,57 @@ function buildPrompt() {
 
   const sectionMap = {
     badges:       'Badges (shields.io flat-square, relevant to the tech stack)',
-    demo:         'Demo / Screenshot (placeholder image path)',
-    install:      'Installation (step-by-step with shell code blocks)',
-    usage:        'Usage (with real code examples)',
+    demo:         'Demo / Screenshot section (add placeholder image path)',
+    install:      'Installation (clear step-by-step with shell code blocks)',
+    usage:        'Usage (with real working code examples)',
     api:          'API Reference (key endpoints or functions with params)',
-    config:       'Configuration (env vars or config file)',
-    contributing: 'Contributing (how to fork, branch, PR)',
+    config:       'Configuration (environment variables or config file options)',
+    contributing: 'Contributing (how to fork, branch, and submit a PR)',
     license:      'License (MIT by default)',
-    roadmap:      'Roadmap (upcoming features)',
-    faq:          'FAQ (2-3 realistic questions)',
+    roadmap:      'Roadmap (upcoming planned features)',
+    faq:          'FAQ (2-3 realistic common questions)',
     credits:      'Credits / Acknowledgements',
     changelog:    'Changelog (version history skeleton)',
   };
 
-  return `You are a senior developer writing an outstanding GitHub README.md.
+  return `You are a senior developer writing an outstanding GitHub README.md file.
 
-Project: ${name || 'My Project'}
-Description: ${desc || 'A cool project'}
-Stack: ${tech || 'Not specified'}
-Features:
+Project Name: ${name}
+Description: ${desc}
+Tech Stack: ${tech || 'Not specified'}
+Key Features:
 ${feats || '- Feature 1\n- Feature 2'}
-GitHub: ${gh || 'username'}
+GitHub Username: ${gh || 'username'}
 Tone: ${tone}
 
-Write a complete, production-quality README.md with these sections:
+Write a complete, production-quality README.md that includes these sections:
 ${secs.map(s => `- ${sectionMap[s] || s}`).join('\n')}
 
-Rules:
-- Proper Markdown with fenced code blocks (correct language IDs), tables where helpful
-- Shields.io badges matching the tech stack (flat-square style)
-- Emoji sparingly where they genuinely help
-- Real, practical code examples — no Lorem Ipsum
-- Tone: ${tone} throughout
-- Output ONLY the README.md content, no preamble or closing remarks`;
+Important rules:
+- Use proper Markdown formatting with headings, fenced code blocks with language IDs, and tables where helpful
+- Shields.io badges must match the actual tech stack (flat-square style)
+- Use emoji sparingly only where they genuinely add value
+- Write real, practical code examples — no Lorem Ipsum or placeholder nonsense
+- Match the tone: ${tone}
+- Output ONLY the README.md content — no preamble, no explanation, no closing remarks`;
 }
 
-// ── PROVIDER CALL HANDLERS ──
-
-async function callAnthropic(apiKey, prompt) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 4096,
-      stream: true,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-  });
-
-  if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message || `HTTP ${res.status}`); }
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n'); buffer = lines.pop();
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6).trim();
-      if (data === '[DONE]') return;
-      try {
-        const p = JSON.parse(data);
-        if (p.type === 'content_block_delta' && p.delta?.type === 'text_delta') {
-          appendChunk(p.delta.text);
-        }
-      } catch(e) {}
-    }
-  }
-}
-
-async function callOpenAI(apiKey, prompt, model) {
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: model || 'gpt-4o',
-      max_tokens: 4096,
-      stream: true,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-  });
-
-  if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message || `HTTP ${res.status}`); }
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n'); buffer = lines.pop();
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6).trim();
-      if (data === '[DONE]') return;
-      try {
-        const p = JSON.parse(data);
-        const chunk = p.choices?.[0]?.delta?.content;
-        if (chunk) appendChunk(chunk);
-      } catch(e) {}
-    }
-  }
-}
-
-async function callGoogle(apiKey, prompt, model) {
-  const m = model || 'gemini-1.5-pro';
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${m}:streamGenerateContent?key=${apiKey}&alt=sse`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { maxOutputTokens: 4096 },
-      }),
-    }
-  );
-
-  if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message || `HTTP ${res.status}`); }
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n'); buffer = lines.pop();
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6).trim();
-      try {
-        const p = JSON.parse(data);
-        const chunk = p.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (chunk) appendChunk(chunk);
-      } catch(e) {}
-    }
-  }
-}
-
-async function callOpenRouter(apiKey, prompt, model) {
-  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
-      'HTTP-Referer': window.location.href,
-      'X-Title': 'Readcraft README Generator',
-    },
-    body: JSON.stringify({
-      model: model || 'anthropic/claude-sonnet-4-5',
-      max_tokens: 4096,
-      stream: true,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-  });
-
-  if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message || `HTTP ${res.status}`); }
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n'); buffer = lines.pop();
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6).trim();
-      if (data === '[DONE]') return;
-      try {
-        const p = JSON.parse(data);
-        const chunk = p.choices?.[0]?.delta?.content;
-        if (chunk) appendChunk(chunk);
-      } catch(e) {}
-    }
-  }
-}
-
-function appendChunk(chunk) {
-  generatedMarkdown += chunk;
-  document.getElementById('rawOutput').textContent = generatedMarkdown;
-  document.getElementById('outputBody').scrollTop = document.getElementById('outputBody').scrollHeight;
-}
-
-// ── MAIN GENERATE ──
 async function generate() {
-  const apiKey = document.getElementById('apiKey').value.trim();
-  const model  = document.getElementById('modelSelect').value;
+  const name = document.getElementById('projName').value.trim();
+  const desc = document.getElementById('projDesc').value.trim();
 
-  if (!apiKey) { alert('Please enter your API key.'); return; }
-  if (!document.getElementById('projName').value.trim() || !document.getElementById('projDesc').value.trim()) {
-    alert('Please fill in Project Name and Description.'); return;
+  if (!name || !desc) {
+    showError('Please fill in at least the Project Name and Description.');
+    return;
   }
 
   const btn = document.getElementById('generateBtn');
   const spinner = document.getElementById('spinner');
   const btnText = document.getElementById('btnText');
   const progressBar = document.getElementById('progressBar');
+  const errorBox = document.getElementById('errorBox');
 
+  errorBox.style.display = 'none';
   btn.disabled = true;
   spinner.style.display = 'block';
   btnText.textContent = 'Generating...';
@@ -1074,13 +642,52 @@ async function generate() {
     progressBar.style.width = progress + '%';
   }, 350);
 
-  const prompt = buildPrompt();
-
   try {
-    if      (currentProvider === 'anthropic')  await callAnthropic(apiKey, prompt);
-    else if (currentProvider === 'openai')     await callOpenAI(apiKey, prompt, model);
-    else if (currentProvider === 'google')     await callGoogle(apiKey, prompt, model);
-    else if (currentProvider === 'openrouter') await callOpenRouter(apiKey, prompt, model);
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 'REPLACE_WITH_YOUR_KEY',
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4096,
+        stream: true,
+        messages: [{ role: 'user', content: buildPrompt() }],
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.error?.message || `HTTP ${response.status}`);
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const data = line.slice(6).trim();
+        if (data === '[DONE]') break;
+        try {
+          const parsed = JSON.parse(data);
+          if (parsed.type === 'content_block_delta' && parsed.delta?.type === 'text_delta') {
+            generatedMarkdown += parsed.delta.text;
+            raw.textContent = generatedMarkdown;
+            document.getElementById('outputBody').scrollTop = document.getElementById('outputBody').scrollHeight;
+          }
+        } catch(e) {}
+      }
+    }
 
     clearInterval(prog);
     progressBar.style.width = '100%';
@@ -1091,7 +698,9 @@ async function generate() {
     clearInterval(prog);
     progressBar.style.width = '0%';
     raw.classList.remove('cursor');
-    raw.textContent = `⚠ Error: ${err.message}\n\nCheck your API key and try again.`;
+    raw.style.display = 'none';
+    document.getElementById('placeholder').style.display = 'flex';
+    showError(`Something went wrong: ${err.message}`);
   } finally {
     btn.disabled = false;
     spinner.style.display = 'none';
@@ -1099,7 +708,12 @@ async function generate() {
   }
 }
 
-// ── VIEW SWITCH ──
+function showError(msg) {
+  const box = document.getElementById('errorBox');
+  box.textContent = '⚠ ' + msg;
+  box.style.display = 'block';
+}
+
 function switchView(view) {
   const raw = document.getElementById('rawOutput');
   const preview = document.getElementById('previewOutput');
@@ -1115,7 +729,6 @@ function switchView(view) {
   }
 }
 
-// ── MARKDOWN PARSER ──
 function markdownToHtml(md) {
   let h = md
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
@@ -1152,8 +765,10 @@ function downloadOutput() {
   const name = (document.getElementById('projName').value.trim() || 'README').toLowerCase().replace(/\s+/g,'-');
   const blob = new Blob([generatedMarkdown], { type: 'text/markdown' });
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = `${name}-README.md`;
-  a.click(); URL.revokeObjectURL(a.href);
+  a.href = URL.createObjectURL(blob);
+  a.download = `${name}-README.md`;
+  a.click();
+  URL.revokeObjectURL(a.href);
   showToast('✓ Downloaded README.md');
 }
 
